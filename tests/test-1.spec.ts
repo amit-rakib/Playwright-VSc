@@ -13,5 +13,5 @@ test('test', async ({ page }) => {
   await page.getByRole('combobox').selectOption('Albania');
   await page.getByRole('checkbox').check();
   await page.getByRole('button', { name: 'Proceed' }).click();
-  await page.getByText('Thank you, your orde has').click();
+  await page.getByText('Thank you, your order has').click();
 });
