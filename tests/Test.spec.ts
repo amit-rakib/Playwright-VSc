@@ -15,6 +15,19 @@ test('get all the links', async({page})=>{
 
 })
 
+test("Get all product title", async ({page}) => {
+    await page.goto("https://www.demoblaze.com/")
+
+    await page.waitForSelector(".hrefch")
+    const elements = await page.$$(".hrefch"); 
+    const n = elements.length
+    console.log(`Product length: ${n}`)
+    for(const name of elements) {
+         const productName = await name.textContent()
+         console.log(productName)
+    }
+})
+
 
 test("Click all links and get titles", async ({ page, browser }) => {
     await page.goto("https://www.demoblaze.com/");
